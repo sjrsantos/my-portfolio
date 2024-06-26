@@ -6,11 +6,11 @@ import Projects from "./components/Projects/Projects";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Router basename="/My-Portfolio">
+    <Router>
       <GlobalStyle />
       <Navbar />
       <Routes>
