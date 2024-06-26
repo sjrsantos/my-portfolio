@@ -14,7 +14,7 @@ function App() {
       <GlobalStyle />
       <Navbar />
       <Routes>
-        <Route exact path="/My-Portfolio/" element={<Home />} />
+        <Route path="/My-Portfolio/" element={<Home />} />
         <Route path="/My-Portfolio/about" element={<About />} />
         <Route path="/My-Portfolio/projects" element={<Projects />} />
         <Route path="/My-Portfolio/contact" element={<Contact />} />
