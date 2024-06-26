@@ -1,4 +1,3 @@
-// src/components/About/About.styles.js
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -16,6 +15,7 @@ export const AboutWrapper = styled(motion.div)`
   h1 {
     font-size: 2.5rem; /* Sets font size for main header */
     margin-bottom: 1rem; /* Adds space below header */
+    margin-top: 3rem; /* Adds space above header */
   }
 
   h2 {
@@ -27,6 +27,38 @@ export const AboutWrapper = styled(motion.div)`
     font-size: 1.1rem; /* Sets font size for paragraphs */
     line-height: 1.6; /* Sets line spacing for better readability */
     margin-bottom: 1.5rem; /* Adds space below paragraphs */
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    h1 {
+      font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    h2 {
+      font-size: 1.75rem; /* Adjust font size for smaller screens */
+    }
+
+    p {
+      font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    h2 {
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
+    p {
+      font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
   }
 `;
 
@@ -40,4 +72,12 @@ export const CardWrapper = styled(motion.div)`
   transform: ${({ isVisible }) =>
     isVisible ? "translateY(0)" : "translateY(20px)"};
   transition: opacity 0.5s, transform 0.5s ease-out;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+  }
 `;
