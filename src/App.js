@@ -6,18 +6,18 @@ import Projects from "./components/Projects/Projects";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
-import { Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
+    <Router basename="My-Portfolio">
       <GlobalStyle />
       <Navbar />
       <Routes>
-        <Route path="/My-Portfolio/" element={<Home />} />
-        <Route path="/My-Portfolio/about" element={<About />} />
-        <Route path="/My-Portfolio/projects" element={<Projects />} />
-        <Route path="/My-Portfolio/contact" element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );
