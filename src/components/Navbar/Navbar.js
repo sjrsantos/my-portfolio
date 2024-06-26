@@ -4,10 +4,10 @@ import { Nav, NavLink } from "./Navbar.styles";
 
 const Navbar = () => (
   <Nav>
-    <NavLink to="/">Home</NavLink>
-    <NavLink to="/about">About</NavLink>
-    <NavLink to="/projects">Projects</NavLink>
-    <NavLink to="/contact">Contact</NavLink>
+    <NavLink to="/My-Portfolio/">Home</NavLink>
+    <NavLink to="/My-Portfolio/about">About</NavLink>
+    <NavLink to="/My-Portfolio/projects">Projects</NavLink>
+    <NavLink to="/My-Portfolio/contact">Contact</NavLink>
   </Nav>
 );
 
