@@ -16,12 +16,28 @@ export const ContactWrapper = styled(motion.div)`
   @media (max-width: 480px) {
     padding: 1rem;
   }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      color: #0056b3;
+    }
+
+    svg {
+      margin-left: 0.5rem;
+    }
+  }
 `;
 
 export const FormWrapper = styled.form`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 90%; /* Adjust width to fit smaller screens */
   max-width: 500px;
   margin: auto;
   padding: 2rem;

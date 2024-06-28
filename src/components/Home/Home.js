@@ -17,6 +17,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Home = () => {
+  const sliderRef = React.useRef(null);
+
   const settings = {
     centerMode: true,
     centerPadding: "60px",
@@ -28,6 +30,21 @@ const Home = () => {
     speed: 500,
     slidesToScroll: 1,
   };
+
+  const handleImageClick = (index) => {
+    if (sliderRef.current) {
+      sliderRef.current.slickGoTo(index);
+    }
+  };
+
+  const images = [
+    profileImage1,
+    profileImage2,
+    profileImage3,
+    profileImage4,
+    profileImage5,
+    profileImage6,
+  ];
 
   return (
     <HomeWrapper
@@ -44,25 +61,12 @@ const Home = () => {
       </Title>
       <h1>Silvio dos Santos Junior</h1>
       <CarouselWrapper>
-        <Slider {...settings}>
-          <div>
-            <CarouselImage src={profileImage1} alt="Profile 1" />
-          </div>
-          <div>
-            <CarouselImage src={profileImage2} alt="Profile 2" />
-          </div>
-          <div>
-            <CarouselImage src={profileImage3} alt="Profile 3" />
-          </div>
-          <div>
-            <CarouselImage src={profileImage4} alt="Profile 4" />
-          </div>
-          <div>
-            <CarouselImage src={profileImage5} alt="Profile 5" />
-          </div>
-          <div>
-            <CarouselImage src={profileImage6} alt="Profile 6" />
-          </div>
+        <Slider ref={sliderRef} {...settings}>
+          {images.map((image, index) => (
+            <div key={index} onClick={() => handleImageClick(index)}>
+              <CarouselImage src={image} alt={`Profile ${index + 1}`} />
+            </div>
+          ))}
         </Slider>
       </CarouselWrapper>
       <Subtitle

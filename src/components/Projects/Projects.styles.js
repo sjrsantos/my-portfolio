@@ -45,11 +45,17 @@ export const ProjectItem = styled(motion.div)`
   padding: 2rem;
   margin: 1rem 0;
   width: 100%;
-  max-width: 600px; /* Adjusted the max width to 600px */
-  cursor: pointer;
+  max-width: 600px; /* Set a max width for the cards */
+  height: auto; /* Allow the height to adjust based on content */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
   color: black; /* Set text color to black for ProjectItem content */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -61,12 +67,39 @@ export const ProjectItem = styled(motion.div)`
   }
 `;
 
+export const ProjectIcon = styled.div`
+  margin-bottom: 1rem;
+`;
+
+export const ProjectImage = styled.img`
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Limit the maximum height of the image */
+  margin-bottom: 1rem; /* Space between image and other content */
+  border-radius: 10px; /* Add rounded corners */
+`;
+
+export const ProjectTitle = styled.h2`
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+`;
+
+export const ProjectDescription = styled.p`
+  font-size: 1rem;
+  margin-bottom: 1rem;
+`;
+
 export const ProjectLink = styled.div`
   margin-top: 0.5rem;
   color: rgba(0, 0, 0, 0.8); /* Adjust color for better visibility */
   text-decoration: none;
+  font-weight: bold;
 
   &:hover {
     text-decoration: underline;
+  }
+
+  svg {
+    margin-left: 0.5rem;
   }
 `;

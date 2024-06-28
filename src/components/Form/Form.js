@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { FormWrapper, Input, TextArea, Button } from "./Form.styles";
+import { IoIosSend } from "react-icons/io";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +67,9 @@ const Form = () => {
         onChange={handleChange}
         required
       />
-      <Button type="submit">Send</Button>
+      <Button type="submit">
+        Send <IoIosSend />
+      </Button>
     </FormWrapper>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { ContactWrapper } from "./Contact.styles";
 import Form from "../Form/Form";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => (
   <ContactWrapper
@@ -17,7 +18,7 @@ const Contact = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          LinkedIn
+          LinkedIn <FaLinkedin size={"2rem"} />
         </a>
       </b>{" "}
       profile.
@@ -30,7 +31,7 @@ const Contact = () => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub
+          GitHub <FaGithub size={"2rem"} />
         </a>
       </b>{" "}
       profile.

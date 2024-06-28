@@ -6,7 +6,7 @@ export const HomeWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  flex: 1; /* Ensure the HomeWrapper takes the remaining space */
   text-align: center;
   padding: 2rem 1rem;
 
@@ -46,7 +46,7 @@ export const Subtitle = styled(motion.h2)`
 `;
 
 export const CarouselWrapper = styled.div`
-  width: 80%; /* Adjust the width as needed */
+  width: 50%; /* Adjust the width as needed */
   margin: 1rem 0;
 
   .slick-slide {
