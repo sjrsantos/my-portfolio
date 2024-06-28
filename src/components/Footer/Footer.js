@@ -3,17 +3,23 @@ import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const FooterWrapper = styled.footer`
+  width: 100%;
+  padding: 1rem 0;
   background-color: #333;
   color: white;
-  padding: 2rem 1rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem 0;
+  }
 `;
 
 const SocialLinks = styled.div`
-  margin: 1rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 1rem;
 
   a {
     color: white;
@@ -27,14 +33,13 @@ const SocialLinks = styled.div`
   }
 `;
 
-const ContactInfo = styled.div`
-  margin: 1rem 0;
+const ContactInfo = styled.p`
+  margin: 0.5rem 0;
 `;
 
 const Copyright = styled.p`
-  margin: 1rem 0;
+  margin-top: 1rem;
   font-size: 0.875rem;
-  color: #ccc;
 `;
 
 const Footer = () => (
@@ -58,13 +63,8 @@ const Footer = () => (
         <FaEnvelope />
       </a>
     </SocialLinks>
-    <ContactInfo>
-      <p>Contact: silvio-sjunior@hotmail.com</p>
-    </ContactInfo>
-    <Copyright>
-      &copy; {new Date().getFullYear()} Silvio dos Santos Junior. All rights
-      reserved.
-    </Copyright>
+    <ContactInfo>Contact: silvio-sjunior@hotmail.com</ContactInfo>
+    <Copyright>© 2024 Silvio dos Santos Junior. All rights reserved.</Copyright>
   </FooterWrapper>
 );
 

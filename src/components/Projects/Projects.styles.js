@@ -6,18 +6,22 @@ export const ProjectsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1rem; /* Adjust padding for smaller screens */
-  position: relative; /* Ensure the wrapper is positioned relatively */
-  min-height: 100vh; /* Ensure it covers the full height */
-  color: white; /* Change text color to white */
-  overflow: hidden; /* Prevent scroll bars */
+  padding: 3rem 1rem 1rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
 
-  @media (max-width: 768px) {
-    padding: 2rem 1rem;
+  @media (min-width: 480px) {
+    padding: 4rem 1rem 2rem;
   }
 
-  @media (max-width: 480px) {
-    padding: 1rem;
+  @media (min-width: 768px) {
+    padding: 5rem 1rem 3rem;
+  }
+
+  h1 {
+    margin-top: 1rem;
+    color: white; /* Change h1 color to white */
   }
 `;
 
@@ -27,35 +31,37 @@ export const BackgroundWrapper = styled.div`
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; /* Position it behind the content */
+  z-index: -1;
   background: url("https://media.giphy.com/media/doXBzUFJRxpaUbuaqz/giphy.gif")
-    no-repeat center center fixed; /* Use direct GIF URL */
+    no-repeat center center fixed;
   background-size: cover;
 `;
 
-export const ProjectItem = styled(motion.div)`
-  background: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Adjust background to be semi-transparent */
+export const ProjectItem = styled(motion.a)`
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin: 1rem 0;
   width: 100%;
-  max-width: 600px; /* Set a max width for the cards */
-  height: auto; /* Allow the height to adjust based on content */
+  max-width: 600px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: black; /* Set text color to black for ProjectItem content */
+  color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (max-width: 768px) {
     padding: 1.5rem;
@@ -67,16 +73,12 @@ export const ProjectItem = styled(motion.div)`
   }
 `;
 
-export const ProjectIcon = styled.div`
-  margin-bottom: 1rem;
-`;
-
 export const ProjectImage = styled.img`
   width: 100%;
   height: auto;
-  max-height: 150px; /* Limit the maximum height of the image */
-  margin-bottom: 1rem; /* Space between image and other content */
-  border-radius: 10px; /* Add rounded corners */
+  max-height: 150px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
 `;
 
 export const ProjectTitle = styled.h2`
@@ -89,14 +91,37 @@ export const ProjectDescription = styled.p`
   margin-bottom: 1rem;
 `;
 
-export const ProjectLink = styled.div`
+export const ProjectActions = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+`;
+
+export const ProjectLink = styled.a`
   margin-top: 0.5rem;
-  color: rgba(0, 0, 0, 0.8); /* Adjust color for better visibility */
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
+  }
+`;
+
+export const ShareButton = styled.button`
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: #007bff;
   }
 
   svg {
